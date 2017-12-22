@@ -1,0 +1,65 @@
+
+<form class="form-horizontal" th:action="@{/menus}" method="post" id="menuForm" th:object="${menuModel.menu}">
+    <input type="hidden" id="id" name="id" th:value="*{id}"/>
+    <div class="form-group">
+        <label for="name" class="col-sm-2 control-label">名称</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="name" name="name" th:value="*{name}" placeholder="名称" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="href" class="col-sm-2 control-label">链接</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="href" name="href" th:value="*{href}" placeholder="链接" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="permission" class="col-sm-2 control-label">权限</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="permission" name="permission" th:value="*{permission}" placeholder="权限" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="parentName" class="col-sm-2 control-label">上级菜单</label>
+        <div class="col-sm-5">
+            <input type="text" class="form-control" id="parentName" name="parentName" th:value="${menuModel.parentName}" placeholder="上级菜单" />
+            <input type="hidden" class="form-control" id="parentId" name="parentId" th:value="*{parentId}" placeholder="上级菜单ID" />
+        </div>
+    </div>
+
+</form>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button class="btn btn-default" id="submitEdit" onclick="Menu.submitAdd()"><span class="glyphicon glyphicon-ok-sign"></span>提交</button>
+        <button class="btn btn-default" id="cancel" onclick="Menu.cancel()"><span class="glyphicon glyphicon-remove-sign"></span>取消</button>
+    </div>
+</div>
+
+<!-- The modal -->
+<div class="modal fade" id="flipFlop" tabindex="-1" role="dialog"
+     aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="modalLabel">菜单树</h4>
+                <button type="button" class="close" data-dismiss="modal"
+                        aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <div class="modal-body" id="menuTreeContainer">
+                <div class="zTreeDemoBackground">
+                    <ul id="treeDemo" class="ztree"></ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" data-dismiss="modal" id="sure">确认</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><span class="glyphicon glyphicon-remove-sign"></span>取消</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/system/menuForm.js" th:src="@{/js/system/menuForm.js}"></script>
+<script src="../../js/system/menuTree.js" th:src="@{/js/system/menuTree.js}"></script>

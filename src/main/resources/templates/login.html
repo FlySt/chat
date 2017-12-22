@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+    <title>系统登录</title>
+
+    <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap/bootstrap.min.css" th:href="@{/css/bootstrap/bootstrap.min.css}" rel="stylesheet"/>
+
+    <link href="../../css/signin.css" th:href="@{/css/signin.css}" rel="stylesheet"/>
+
+</head>
+
+<body class="login_bg">
+
+<div class="container">
+    <div class="signin-div">
+        <form class="form-signin" th:action="@{/login}" method="post">
+
+            <input type="text" id="username" name="username" class="f_control f_control_f" placeholder="用户名"/>
+            <!-- <label for="password" class="sr-only">密&nbsp;&nbsp;&nbsp;&nbsp;码：</label> -->
+            <input type="password" id="password" name="password" class="f_control" placeholder="密码"/>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" id="rememberMe" name="rememberMe"/> 记住密码
+                </label>
+            </div>
+            <div class=" col-md-10" th:if="${loginError}">
+                <p class="login-error" th:text="${message}"></p>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block submit" type="submit">
+                登&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;录
+            </button>
+        </form>
+    </div>
+</div> <!-- /container -->
+<script src="../../js/jquery-3.1.1.min.js" th:src="@{/js/jquery-3.1.1.min.js}"></script>
+</body>
+</html>

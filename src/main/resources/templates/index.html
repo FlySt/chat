@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+            <ul class="nav nav-sidebar items">
+                <li th:each="menu:${menuModel.list}"><a href="javascript:void(0)"  data-th-attr="url=${menu.href}" th:text="${menu.name}" class="list-item"></a></li>
+             <!--   <li><a href="javascript:void(0)" data-th-attr="url='users'" class="list-item">用户管理</a></li>
+                <li><a href="javascript:void(0)" data-th-attr="url='roles'" class="list-item">权限管理</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>-->
+            </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        </div>
+    </div>
+</div>
+<div th:replace="fragments/footer :: footer">...</div>
+
+<script src="../../js/system/system.js" th:src="@{/js/system/system.js}"></script>
+</body>
+</html>

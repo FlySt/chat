@@ -1,0 +1,78 @@
+.signin-div{
+  width: 400px;
+  height:580px;
+  //border:1px solid white;
+  float: right;
+  top:50%;
+  left:65%;
+  margin-top: -310px;
+  position: absolute;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.login_bg{
+   background-size: 100% auto;
+}
+.logo{
+    width: 92px;
+    height:95px;
+    display: inline-block;
+    background-size: 100% auto;
+    margin-right: -50px;
+
+}
+
+.user_login{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color:#285483;
+    text-align: center;
+    width: 400px;
+    height: 136px;
+    margin:0 auto;
+    padding-top: 20px;
+
+}
+.user_login div{
+  float: right;
+  margin-right:80px;
+  //clear:both;
+}
+.fp{
+  text-align: left;
+  font-size: 26px;
+  color:#0099ff;
+}
+.sp{
+  font-size: 26px;
+  color:#ffffff;
+}
+.dline{
+    margin:0 auto;
+    height:1px;
+    width: 350px;
+    display: block;
+    border-bottom:1px dashed #036;
+
+}
+.f_control,.checkbox,.submit{
+  display: block;
+  //margin:50px auto 0;
+  margin-left:60px;
+  margin-top:50px; 
+  padding-left:10px;
+  width:280px;
+  height:50px;
+}
+.submit{
+  line-height: 30px;
+  margin-top:50px; 
+}
+.checkbox{
+  margin-top:30px; 
+}
+
+.login-error{
+    color: #d9534f;
+}

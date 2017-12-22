@@ -1,0 +1,36 @@
+<ol class="breadcrumb">
+    <li><a href="#">系统设置</a></li>
+    <li class="active">用户管理</li>
+</ol>
+<form class="form-horizontal" id="userForm" th:action="@{/users}" th:object="${userModel.user}" method="post">
+    <input type="hidden" name="id" id="userId" th:value="*{id}"/>
+    <input type="hidden" name="password" th:value="*{password}"/>
+    <div class="form-group">
+        <label for="username" class="col-sm-2 control-label">用户名</label>
+        <div class="col-sm-4">
+            <input  class="form-control" name="username" id="username" th:value="*{username}" placeholder="用户名"/>
+            <span class="span_star">*</span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="col-sm-2 control-label">用户角色</label>
+        <div class="col-sm-4 role_list" style="display: inline-block" >
+            <div class="checkbox" th:each="role:${userModel.allRoles}" >
+                <label>
+                    <input type="checkbox" name="roleIdList" id="id" th:value="${role.id}"  th:text="${role.name}" />
+                </label>
+            </div>
+        </div>
+        <input type="hidden" id="roleIds" name="roleIds" th:value="*{roleIds}" />
+    </div>
+</form>
+<div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" id="submitEdit" onclick="User.save()"><span class="glyphicon glyphicon-ok-sign"></span>提交</button>
+        <button  class="btn btn-default" id="cancel" onclick="User.cancel()"><span class="glyphicon glyphicon-remove-sign"></span>取消</button>
+    </div>
+</div>
+
+<script src="../../js/system/userForm.js" th:src="@{/js/system/userForm.js}"></script>
+<script src="../../js/system/user.js" th:src="@{/js/system/user.js}"></script>

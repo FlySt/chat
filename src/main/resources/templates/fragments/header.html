@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" data-th-fragment="header">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
+
+
+    <title>权限管理系统</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../css/bootstrap/bootstrap.min.css" th:href="@{/css/bootstrap/bootstrap.min.css}" rel="stylesheet"/>
+    <link href="../../css/bootstrap/bootstrap-table.min.css" th:href="@{/css/bootstrap/bootstrap-table.min.css}" rel="stylesheet"/>
+
+    <link href="../../css/bootstrap/bootstrap-select.css" th:href="@{/css/bootstrap/bootstrap-select.css}" rel="stylesheet"/>
+    <!--validator-->
+
+    <!-- Custom styles for this template -->
+    <link href="../../css/dashboard.css" th:href="@{/css/dashboard.css}" rel="stylesheet"/>
+    <!-- toastr CSS -->
+    <link href="../../css/toastr.min.css" th:href="@{/css/toastr.min.css}" rel="stylesheet"/>
+
+    <link rel="stylesheet" href="../../css/zTreeStyle/zTreeStyle.css" th:href="@{/css/zTreeStyle/zTreeStyle.css}"/>
+
+    <link href="../../css/jquery-treegrid/css/jquery.treegrid.css" th:href="@{/css/jquery-treegrid/css/jquery.treegrid.css}" rel="stylesheet"/>
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+           <a class="navbar-brand" th:href="@{/}"></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right items">
+                <li><a th:href="@{/logout}">安全退出</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>
